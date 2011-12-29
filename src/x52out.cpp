@@ -8,7 +8,7 @@ extern const char* version;
 
 #define STANDARD_MSG  "   Saitek X52\n     Flight\n Control System"
 #define STANDARD_MSG_PRO " Saitek X52 Pro\n     Flight\n Control System"
-#define WELCOME_MSG   "   x52control\n \n      ver %s", version
+#define WELCOME_MSG   "   x52control\n \n   ver %s", version
 
 #if defined (__ppc__)
 #define __bswap_constant_16(x)                   \
