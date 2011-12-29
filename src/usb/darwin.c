@@ -253,7 +253,8 @@ static usb_device_t **usb_get_next_device (io_iterator_t deviceIterator, UInt32 
     io_cf_plugin_ref_t *plugInInterface = NULL;
     usb_device_t **device;
     io_service_t usbDevice;
-    long result, score;
+    long result;
+    SInt32 score;
 
     if (!IOIteratorIsValid (deviceIterator) || !(usbDevice = IOIteratorNext(deviceIterator)))
         return NULL;
@@ -460,7 +461,7 @@ static int claim_interface (usb_dev_handle *dev, int interface)
     IOUSBFindInterfaceRequest request;
 
     struct darwin_dev_handle *device;
-    long score;
+    SInt32 score;
     int current_interface;
 
     device = dev->impl_info;
