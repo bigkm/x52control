@@ -2,9 +2,9 @@ TARGET		= mac.xpl
 OUTDIR		= build
 INTDIR		= $(OUTDIR)/obj
 
-CC			= gcc-4.2
-CPP			= g++-4.2
-LD			= gcc-4.2
+CC			= clang
+CPP			= clang++
+LD			= clang
 
 DEFS		= -DAPL -DPIC -DLIL -DXPLM200 -D __i386__
 
