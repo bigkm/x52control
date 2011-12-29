@@ -1,0 +1,6 @@
+
+This branch is a fork made to compile under MacOSX Lion for Lion
+
+To build for mac:
+
+    $ make -f Makefile.mac107
