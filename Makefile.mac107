@@ -8,7 +8,7 @@ LD			= clang
 
 DEFS		= -DAPL -DPIC -DLIL -DXPLM200 -D __i386__
 
-CFLAGS		= -O2 -fPIC -fomit-frame-pointer -mmacosx-version-min=10.5 -arch i386 -arch x86_64
+CFLAGS		= -O2 -fPIC -fomit-frame-pointer -mmacosx-version-min=10.7 -arch i386 -arch x86_64
 CPPFLAGS	= $(CFLAGS)
 LDFLAGS		= -mmacosx-version-min=10.7 -arch i386 -arch x86_64 -framework IOKit -framework CoreFoundation -framework Carbon -bundle -undefined dynamic_lookup
 
