@@ -6,11 +6,11 @@ CC			= gcc-4.2
 CPP			= g++-4.2
 LD			= gcc-4.2
 
-DEFS		= -DAPL -DPIC -DLIL -DXPLM200
+DEFS		= -DAPL -DPIC -DLIL -DXPLM200 -D __i386__
 
-CFLAGS		= -O2 -fPIC -fomit-frame-pointer -mmacosx-version-min=10.5 -arch i386 -arch ppc -arch x86_64 -arch ppc64 -arch ppc970 
+CFLAGS		= -O2 -fPIC -fomit-frame-pointer -mmacosx-version-min=10.5 -arch i386 -arch x86_64
 CPPFLAGS	= $(CFLAGS)
-LDFLAGS		= -mmacosx-version-min=10.5 -arch i386 -arch ppc -arch x86_64 -arch ppc64 -arch ppc970 -framework IOKit -framework CoreFoundation -framework Carbon -bundle -undefined dynamic_lookup
+LDFLAGS		= -mmacosx-version-min=10.7 -arch i386 -arch x86_64 -framework IOKit -framework CoreFoundation -framework Carbon -bundle -undefined dynamic_lookup
 
 OBJ_PLUGIN	=	src/main.o \
 				src/x52session.o \
@@ -56,7 +56,7 @@ make_dirs:
 
 $(OUTDIR)/$(TARGET):	$(OBJ_PLUGIN)
 	$(print_link) $@
-	$(LD) $(LDFLAGS) -o @ $(OBJ_PLUGIN) || $(print_error)
+	$(LD) $(LDFLAGS) -o $(TARGET) $(OBJ_PLUGIN) || $(print_error)
 
 clean:
 	$(print_clean)
